@@ -1,0 +1,76 @@
+<!DOCTYPE html
+	<head>
+      
+        	<title>图片调研</title>
+	</head>
+	<body>
+        ！NOTICE：由于程序的不完善性，禁止刷新页面
+		<input type="hidden" id="test" name="test" value="<?=$t2?>"  >
+		<input type="hidden" id="width" name="width" value="<?=$width?>">
+		<input type="hidden" id="height" name="height" value="<?=$height?>">
+	<div id="PicPos"><img id="pic" /></div>	
+		
+<script>
+var t2 = document.getElementById("test").value;
+   
+var Iheight=document.getElementById("height").value;
+var Iwidth=document.getElementById("width").value;
+var a=1000;
+var b=550;
+if(Iwidth/Iheight>a/b){
+	document.getElementById("pic").width=a;
+	document.getElementById("pic").height=a*Iheight/Iwidth;
+		}
+else{
+	document.getElementById("pic").height=b;
+	document.getElementById("pic").width=b*Iwidth/Iheight;
+		}
+document.getElementById("pic").src=t2;
+
+
+</script>
+<script > 
+function validateForm()
+{
+	if(document.input.Pleasure.value=="0"){
+	alert('选择图片愉悦程度');
+	return false;
+	}
+	if(document.input.Arousal.value=="0"){
+	alert('选择图片唤醒程度');
+	return false;
+	}
+}
+</script>
+
+
+<form name="input" action="add_score.php" onsubmit="return validateForm()" method="post">
+<select name="Pleasure">
+<option value="0">--选择图片愉悦程度--</option>
+<option value="1">Extremely unpleasant</option>
+<option value="2">Very unpleasant</option>
+<option value="3">Unpleasant</option>
+<option value="4">A little unpleasant</option>
+<option value="5">Moderate</option>
+<option value="6">A little pleasant </option>
+<option value="7">Pleasant</option>
+<option value="8">Very pleasant</option>
+<option value="9">Extremely pleasant </option>
+</select>
+<select name="Arousal">
+<option value="0">--选择图片唤醒程度--</option>
+<option value="1">Extremely unexciting</option>
+<option value="2">Very unexciting</option>
+<option value="3">Unexciting</option>
+<option value="4">Calm</option>
+<option value="5">Moderate</option>
+<option value="6">A little exciting </option>
+<option value="7">Exciting</option>
+<option value="8">Very exiting</option>
+<option value="9">Extremely exciting </option>
+</select>	
+<input type ="submit" value ="Save & Continue">
+</form>
+      
+    </body>
+</html>
