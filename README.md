@@ -1,2 +1,2 @@
 # Reference
-This contains some code written in old days, 
+These are some small projects 
